@@ -25,9 +25,7 @@ class HomePage extends React.Component {
         this.props.setLoginExit()
 
     }
-
     render() {
-        // console.log(this.props.feedData)
         return (
             <HomePageWrapper>
                 <ImageHome src={require("../../images/image1.png")} />
