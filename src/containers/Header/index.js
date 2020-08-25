@@ -13,7 +13,7 @@ const HeadersWrapper = styled.div`
 `
 
 const TitleDashBoard = styled.h2`
-  margin: 0;
+  margin: 0 0 0 26px;
   color: #FFFFFF;
 `
 
