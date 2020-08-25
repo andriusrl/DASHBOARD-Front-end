@@ -4,7 +4,7 @@ const initialState = {
 
 const FeedData = (state = initialState, action) => {
     switch (action.type) {
-        case 'SET_LOGIN_DATA': {
+        case 'SET_FEED_DATA': {
             return {
                 feedData: action.payload.value[0].data.map(
                     feedValue=>{return{

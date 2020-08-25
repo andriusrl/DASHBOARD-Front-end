@@ -10,7 +10,7 @@ const baseUrl = "https://my-json-server.typicode.com/silvandante/frontendtest"
 
 export const setFeed = value => {
     return {
-        type: 'SET_LOGIN_DATA',
+        type: 'SET_FEED_DATA',
         payload: {
             value
         }
