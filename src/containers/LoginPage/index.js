@@ -7,7 +7,6 @@ import { setMenu } from "../../actions/menu";
 const LoginPageWrapper = styled.div`
     height: 80vh;
 `
-
 const FormGroup = styled.form`
     display: flex;
     flex-direction: column;
@@ -32,7 +31,7 @@ const CustomInput = styled.input`
     border-bottom: 1px solid #B7B7B7;
     width: 80%;
     margin: 16px auto 16px auto;
-    /* background-color: #FFFFFF; */
+    font-size: 22pt;
 `
 const CustomButton = styled.button`
     background-color: #19612E;
@@ -75,8 +74,8 @@ class LoginPage extends React.Component {
             <LoginPageWrapper>
                 <FormGroup onSubmit={this.handleSubmit}>
                     <TitleForm>Login</TitleForm>
-                    <CustomInput type="text" name="inputUser" value={this.state.inputUser} onChange={this.handleInputChange} />
-                    <CustomInput type="password" name="inputPassword" value={this.state.inputPassword} onChange={this.handleInputChange} />
+                    <CustomInput type="text" name="inputUser" placeholder="Usuário" value={this.state.inputUser} onChange={this.handleInputChange} />
+                    <CustomInput type="password" name="inputPassword" placeholder="Senha" value={this.state.inputPassword} onChange={this.handleInputChange} />
                     <CustomButton type="submit" >Entrar</CustomButton>
                 </FormGroup>
             </LoginPageWrapper>
