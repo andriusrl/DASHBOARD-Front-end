@@ -1,6 +1,6 @@
 const initialState = {
     menu: {
-        dashBoard: false,
+        dashboard: false,
         exit: false,
         about: false,
         login: false,

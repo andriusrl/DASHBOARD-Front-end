@@ -35,7 +35,7 @@ export const login = (user, password) => async (dispatch) =>{
         }
 
     }catch(error){
-        alert("Por favor tente novamente")
+        alert("Por favor tente novamenteeeee")
         console.log(error)
     }
 }

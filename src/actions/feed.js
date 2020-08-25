@@ -36,6 +36,6 @@ export const getFeed = () => async (dispatch) =>{
             dispatch(setFeed(values))
         })
     }catch(error){
-        alert("Por favor tente novamente")
+        // alert("Por favor tente novamente")
     }
 }

@@ -2,11 +2,11 @@ import React from "react"
 import styled from "styled-components"
 import { connect } from "react-redux"
 import { login } from "../../actions/login";
+import { setMenu } from "../../actions/menu";
 
 const LoginPageWrapper = styled.div`
-
+    height: 80vh;
 `
-
 const FormGroup = styled.form`
     display: flex;
     flex-direction: column;
@@ -26,6 +26,20 @@ const TitleForm = styled.h1`
     padding: 12px 0 6px 0;
     color: #FFFFFF;
 `
+const CustomInput = styled.input`
+    border: 0;
+    border-bottom: 1px solid #B7B7B7;
+    width: 80%;
+    margin: 16px auto 16px auto;
+    font-size: 22pt;
+`
+const CustomButton = styled.button`
+    background-color: #19612E;
+    width: fit-content;
+    align-self: center;
+    color: #FFFFFF;
+    padding: 8px 26px 8px 26px;
+`
 
 class LoginPage extends React.Component {
     constructor(props) {
@@ -34,6 +48,14 @@ class LoginPage extends React.Component {
             inputUser: "",
             inputPassword: ""
         }
+    }
+
+    componentDidMount() {
+        this.props.setMenu("login", true)
+    }
+
+    componentWillUnmount() {
+        this.props.setMenu("login", false)
     }
 
     handleInputChange = (e) => {
@@ -52,9 +74,9 @@ class LoginPage extends React.Component {
             <LoginPageWrapper>
                 <FormGroup onSubmit={this.handleSubmit}>
                     <TitleForm>Login</TitleForm>
-                    <input type="text" name="inputUser" value={this.state.inputUser} onChange={this.handleInputChange} />
-                    <input type="password" name="inputPassword" value={this.state.inputPassword} onChange={this.handleInputChange} />
-                    <button type="submit" >Entrar</button>
+                    <CustomInput type="text" name="inputUser" placeholder="Usuário" value={this.state.inputUser} onChange={this.handleInputChange} />
+                    <CustomInput type="password" name="inputPassword" placeholder="Senha" value={this.state.inputPassword} onChange={this.handleInputChange} />
+                    <CustomButton type="submit" >Entrar</CustomButton>
                 </FormGroup>
             </LoginPageWrapper>
         )
@@ -63,6 +85,7 @@ class LoginPage extends React.Component {
 
 const mapDispatchToProps = dispatch => ({
     login: (user, password) => dispatch(login(user, password)),
+    setMenu: (nameMenu, statusMenu) => dispatch(setMenu(nameMenu, statusMenu))
   })
 
 export default connect (null, mapDispatchToProps)(LoginPage);
