@@ -4,6 +4,9 @@ import styled from 'styled-components';
 const PostWrapper = styled.div`
     background-color: #FFFFFF;
     display: flex;
+    margin-bottom: 32px;
+    box-shadow: 1px 1px 1px 1px #ccc; 
+    /* border: 1px solid #A9A9A9; */
 `
 const Comment = styled.div`
     display: flex;
@@ -51,7 +54,6 @@ const showComments = (props)=>{
 }
 
 function Post(props) {
-    // console.log(props.imageURL)
     return (
         <PostWrapper>
             <Description>

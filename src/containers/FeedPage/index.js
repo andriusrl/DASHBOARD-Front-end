@@ -55,9 +55,6 @@ class LoginPage extends React.Component {
             
             return (
                 this.props.feedData.map(feed=>{
-                    console.log(feed)
-
-                    console.log(feed.imageUrl)
                     return(
                     <Post
                     key={feed.id}
