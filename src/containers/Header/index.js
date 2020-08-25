@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
+import { push } from "connected-react-router";
+import { routes } from '../../containers/Router';
 
 const HeadersWrapper = styled.div`
  background-color: #2D8848;
@@ -51,7 +53,7 @@ function Headers(props) {
       {props.username ?
         <ButtonGroup>
           <ButtonMenu background={props.menuStatus.dashboard?"#19612E":"transparent"} ><TextButtonMenu>DASHBOARD</TextButtonMenu></ButtonMenu>
-          <ButtonMenu background={props.menuStatus.exit?"#19612E":"transparent"} ><TextButtonMenu>SAIR</TextButtonMenu></ButtonMenu>
+          <ButtonMenu background={props.menuStatus.exit?"#19612E":"transparent"} onClick={props.goToHome}><TextButtonMenu>SAIR</TextButtonMenu></ButtonMenu>
         </ButtonGroup> :
         <ButtonGroup>
           <ButtonMenu background={props.menuStatus.about?"#19612E":"transparent"} ><TextButtonMenu>SOBRE</TextButtonMenu></ButtonMenu>
@@ -69,4 +71,8 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(Headers);
+const mapDispatchToProps = dispatch => ({
+  goToHome: () => dispatch(push(routes.root)),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Headers);
