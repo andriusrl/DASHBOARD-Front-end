@@ -41,16 +41,6 @@ class LoginPage extends React.Component {
     }
 
     showPosts = () => {
-        // return(
-        //     <Post
-        //     body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pellentesque vel felis et efficitur. Morbi ac tellus a nunc lobortis rutrum a sed nulla. Cras ultricies nulla erat, non malesuada nulla cursus at. Donec sollicitudin elit sapien, eget euismod odio sollicitudin a. Maecenas lectus tortor, egestas non cursus sit amet, congue id nisl. Sed molestie purus id mauris vestibulum varius. Nam dictum ac ligula sit amet luctus. Mauris mattis, lacus vel euismod volutpat, erat purus semper libero, ut aliquam nisi metus sed nibh. Mauris ipsum arcu, volutpat at auctor at, maximus ac odio. Curabitur est sapien, fermentum non mattis vel, luctus vitae velit. Vivamus nec varius neque. Morbi eget sapien egestas, finibus est feugiat, facilisis tortor."
-        //     id={1}
-        //     imageURL="https://conafer.org.br/wp-content/uploads/2020/08/001.jpg"
-        //     title="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-        //     profilePic="https://i.pravatar.cc/150?img=27"
-        //     comment="Nunc odio neque, maximus quis magna nec, viverra fringilla risus."
-        // />
-        // )
         if (this.props.feedData) {
             
             return (
@@ -72,19 +62,10 @@ class LoginPage extends React.Component {
 
     render() {
         // console.log(this.props.feedData)
-        // let teste = this.props.feedData
-        // if (teste) {
-        //     console.log(teste.map(value => { return { title: value.title } }))
-        // }
-        // console.log(this.props.feedData.comments[0].profilePic !== undefined ? "certo": "errado")
-        // if(this.props.feedData){
-        //     console.log("entrou")
-        //     console.log(this.props.feedData[0].comments[0])
-        // }
         return (
             <FeedPageWrapper>
                 <Title>Seja bem vindo!</Title>
-                <SubTitle>Olá [USUÁRIO], essa é a parte de dentro da minha aplicação <SubTitleBold>MY FRONTEND TEST.</SubTitleBold></SubTitle>
+                <SubTitle>Olá {this.props.username}, essa é a parte de dentro da minha aplicação <SubTitleBold>MY FRONTEND TEST.</SubTitleBold></SubTitle>
                 <SeparationLine />
                 <Title>Feed</Title>
                 <div>
@@ -97,7 +78,8 @@ class LoginPage extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        feedData: state.feedData.feedData
+        feedData: state.feedData.feedData,
+        username: state.loginData.loginData.username,
     }
 }
 
