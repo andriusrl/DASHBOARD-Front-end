@@ -50,7 +50,7 @@ function Headers(props) {
       <TitleDashBoard>MY FRONTEND TEST</TitleDashBoard>
       {props.username ?
         <ButtonGroup>
-          <ButtonMenu background={props.menuStatus.dashBoard?"#19612E":"transparent"} ><TextButtonMenu>DASHBOARD</TextButtonMenu></ButtonMenu>
+          <ButtonMenu background={props.menuStatus.dashboard?"#19612E":"transparent"} ><TextButtonMenu>DASHBOARD</TextButtonMenu></ButtonMenu>
           <ButtonMenu background={props.menuStatus.exit?"#19612E":"transparent"} ><TextButtonMenu>SAIR</TextButtonMenu></ButtonMenu>
         </ButtonGroup> :
         <ButtonGroup>

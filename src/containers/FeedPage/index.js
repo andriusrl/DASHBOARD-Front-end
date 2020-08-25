@@ -40,7 +40,7 @@ class LoginPage extends React.Component {
 
     componentDidMount() {
         this.props.getFeed()
-        this.props.setMenu("about", true)
+        this.props.setMenu("dashboard", true)
     }
 
     showPosts = () => {
