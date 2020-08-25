@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { connect } from "react-redux"
 import { setMenu } from "../../actions/menu";
+import { setLogin } from "../../actions/login";
 
 const HomePageWrapper = styled.div`
     display: flex;
@@ -21,6 +22,8 @@ class HomePage extends React.Component {
         this.props.setMenu("exit", false)
         this.props.setMenu("about", false)
         this.props.setMenu("login", false)
+        this.props.setLoginExit()
+
     }
 
     render() {
@@ -35,7 +38,8 @@ class HomePage extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-    setMenu: (nameMenu, statusMenu) => dispatch(setMenu(nameMenu, statusMenu))
+    setMenu: (nameMenu, statusMenu) => dispatch(setMenu(nameMenu, statusMenu)),
+    setLoginExit: () => dispatch(setLogin(undefined)),
 })
 
 export default connect(null, mapDispatchToProps)(HomePage);

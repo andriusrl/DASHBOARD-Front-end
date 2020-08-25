@@ -38,7 +38,7 @@ function Headers(props) {
       {props.username ?
         <ButtonGroup>
           <ButtonMenu background={props.menuStatus.dashboard?"#19612E":"transparent"} onClick={props.goToFeed} ><TextButtonMenu>DASHBOARD</TextButtonMenu></ButtonMenu>
-          <ButtonMenu background={props.menuStatus.exit?"#19612E":"transparent"} onClick={props.goToExit}><TextButtonMenu>SAIR</TextButtonMenu></ButtonMenu>
+          <ButtonMenu background={props.menuStatus.exit?"#19612E":"transparent"} onClick={props.goToHome}><TextButtonMenu>SAIR</TextButtonMenu></ButtonMenu>
         </ButtonGroup> :
         <ButtonGroup>
           <ButtonMenu background={props.menuStatus.about?"#19612E":"transparent"} onClick={props.goToAbout} ><TextButtonMenu>SOBRE</TextButtonMenu></ButtonMenu>
@@ -61,8 +61,7 @@ const mapDispatchToProps = dispatch => ({
   goToAbout: () => dispatch(push(routes.about)),
   goToFeed: () => dispatch(push(routes.feed)),
   goToLogin: () => dispatch(push(routes.login)),
-  goToExit: () => dispatch(push(routes.root)),
-
+  
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Headers);

@@ -83,7 +83,7 @@ class AboutPage extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-    setMenu: (nameMenu, statusMenu) => dispatch(setMenu(nameMenu, statusMenu))
+    setMenu: (nameMenu, statusMenu) => dispatch(setMenu(nameMenu, statusMenu)),
 })
 
 export default connect(null, mapDispatchToProps)(AboutPage);
