@@ -9,6 +9,8 @@
 ##### - ReactJS
 ##### - Redux
 ##### - React-Router
+##### - Styled-Components
+
 
 # Como iniciar o projeto
 
