@@ -42,6 +42,7 @@ class LoginPage extends React.Component {
 
 
     render() {
+        console.log(this.props.feedData)
         return (
             <FeedPageWrapper>
                 <Title>Seja bem vindo!</Title>
@@ -63,10 +64,16 @@ class LoginPage extends React.Component {
     }
 }
 
+const mapStateToProps = state => {
+    return {
+        feedData: state.feedData.feedData
+    }
+}
+
 const mapDispatchToProps = dispatch => ({
     getFeed: () => dispatch(getFeed()),
   })
 
-export default connect (null, mapDispatchToProps)(LoginPage);
+export default connect (mapStateToProps, mapDispatchToProps)(LoginPage);
 
 
