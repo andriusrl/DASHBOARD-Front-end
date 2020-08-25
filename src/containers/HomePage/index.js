@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { connect } from "react-redux"
+import { setMenu } from "../../actions/menu";
 
 const HomePageWrapper = styled.div`
     display: flex;
@@ -16,7 +17,10 @@ class HomePage extends React.Component {
     }
 
     componentDidMount() {
-
+        this.props.setMenu("dashboard", false)
+        this.props.setMenu("exit", false)
+        this.props.setMenu("about", false)
+        this.props.setMenu("login", false)
     }
 
     render() {
@@ -30,6 +34,10 @@ class HomePage extends React.Component {
     }
 }
 
-export default connect(null, null)(HomePage);
+const mapDispatchToProps = dispatch => ({
+    setMenu: (nameMenu, statusMenu) => dispatch(setMenu(nameMenu, statusMenu))
+})
+
+export default connect(null, mapDispatchToProps)(HomePage);
 
 

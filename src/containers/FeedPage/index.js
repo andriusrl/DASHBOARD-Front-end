@@ -43,6 +43,10 @@ class LoginPage extends React.Component {
         this.props.setMenu("dashboard", true)
     }
 
+    componentWillUnmount() {
+        this.props.setMenu("dashboard", false)
+    }
+
     showPosts = () => {
         if (this.props.feedData) {
             

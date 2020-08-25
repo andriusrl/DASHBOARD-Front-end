@@ -11,17 +11,14 @@ const HeadersWrapper = styled.div`
  align-items: center;
  justify-content: space-between;
 `
-
 const TitleDashBoard = styled.h2`
   margin: 0 0 0 26px;
   color: #FFFFFF;
 `
-
 const ButtonGroup = styled.div`
   display: flex;
   height: 100%;
 `
-
 const ButtonMenu = styled.div`
   color: #FFFFFF;
   background-color: ${
@@ -34,30 +31,18 @@ const TextButtonMenu = styled.p`
   text-align: center;
 `
 
-// const buttonMenu = () => {
-//   return <ButtonMenu><TextButtonMenu>SOBRE</TextButtonMenu></ButtonMenu>
-// }
-
 function Headers(props) {
-  console.log(props.username)
-  // const [menuStatus, setMenuStatus] = useState({
-  //   dashBoard: false,
-  //   exit: false,
-  //   about: false,
-  //   login: false,
-  // })
-  console.log(props.menuStatus)
   return (
     <HeadersWrapper>
-      <TitleDashBoard>MY FRONTEND TEST</TitleDashBoard>
+      <TitleDashBoard onClick={props.goToHome} >MY FRONTEND TEST</TitleDashBoard>
       {props.username ?
         <ButtonGroup>
-          <ButtonMenu background={props.menuStatus.dashboard?"#19612E":"transparent"} ><TextButtonMenu>DASHBOARD</TextButtonMenu></ButtonMenu>
-          <ButtonMenu background={props.menuStatus.exit?"#19612E":"transparent"} onClick={props.goToHome}><TextButtonMenu>SAIR</TextButtonMenu></ButtonMenu>
+          <ButtonMenu background={props.menuStatus.dashboard?"#19612E":"transparent"} onClick={props.goToFeed} ><TextButtonMenu>DASHBOARD</TextButtonMenu></ButtonMenu>
+          <ButtonMenu background={props.menuStatus.exit?"#19612E":"transparent"} onClick={props.goToExit}><TextButtonMenu>SAIR</TextButtonMenu></ButtonMenu>
         </ButtonGroup> :
         <ButtonGroup>
-          <ButtonMenu background={props.menuStatus.about?"#19612E":"transparent"} ><TextButtonMenu>SOBRE</TextButtonMenu></ButtonMenu>
-          <ButtonMenu background={props.menuStatus.login?"#19612E":"transparent"} ><TextButtonMenu>LOGIN</TextButtonMenu></ButtonMenu>
+          <ButtonMenu background={props.menuStatus.about?"#19612E":"transparent"} onClick={props.goToAbout} ><TextButtonMenu>SOBRE</TextButtonMenu></ButtonMenu>
+          <ButtonMenu background={props.menuStatus.login?"#19612E":"transparent"} onClick={props.goToLogin} ><TextButtonMenu>LOGIN</TextButtonMenu></ButtonMenu>
         </ButtonGroup>
       }
     </HeadersWrapper>
@@ -73,6 +58,11 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   goToHome: () => dispatch(push(routes.root)),
+  goToAbout: () => dispatch(push(routes.about)),
+  goToFeed: () => dispatch(push(routes.feed)),
+  goToLogin: () => dispatch(push(routes.login)),
+  goToExit: () => dispatch(push(routes.root)),
+
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Headers);

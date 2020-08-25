@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { connect } from "react-redux"
+import { setMenu } from "../../actions/menu";
 
 const AboutPageWrapper = styled.div`
     display: flex;
@@ -47,7 +48,11 @@ class AboutPage extends React.Component {
     }
 
     componentDidMount() {
+        this.props.setMenu("about", true)
+    }
 
+    componentWillUnmount() {
+        this.props.setMenu("about", false)
     }
 
     render() {
@@ -77,6 +82,10 @@ class AboutPage extends React.Component {
     }
 }
 
-export default connect(null, null)(AboutPage);
+const mapDispatchToProps = dispatch => ({
+    setMenu: (nameMenu, statusMenu) => dispatch(setMenu(nameMenu, statusMenu))
+})
+
+export default connect(null, mapDispatchToProps)(AboutPage);
 
 
