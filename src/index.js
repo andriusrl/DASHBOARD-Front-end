@@ -25,6 +25,7 @@ const store = createStore(generateReducers(history), compose(...middlewares));
 const Main = styled.div`
   height: 100vh;
   font-family: 'Roboto', sans-serif;
+  background-color: #E7E7E7;
 `
 
 ReactDOM.render(
