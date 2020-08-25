@@ -3,6 +3,8 @@ import styled from "styled-components"
 import { connect } from "react-redux"
 import Post from "../../components/Post"
 import { getFeed } from "../../actions/feed";
+import { setMenu } from "../../actions/menu";
+
 
 
 const FeedPageWrapper = styled.div`
@@ -38,6 +40,7 @@ class LoginPage extends React.Component {
 
     componentDidMount() {
         this.props.getFeed()
+        this.props.setMenu("about", true)
     }
 
     showPosts = () => {
@@ -85,6 +88,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
     getFeed: () => dispatch(getFeed()),
+    setMenu: (nameMenu, statusMenu) => dispatch(setMenu(nameMenu, statusMenu))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);
