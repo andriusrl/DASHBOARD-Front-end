@@ -51,6 +51,7 @@ const showComments = (props)=>{
 }
 
 function Post(props) {
+    // console.log(props.imageURL)
     return (
         <PostWrapper>
             <Description>
