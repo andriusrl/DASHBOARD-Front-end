@@ -23,9 +23,17 @@ const middlewares = [
 const store = createStore(generateReducers(history), compose(...middlewares));
 
 const Main = styled.div`
-  height: 100vh;
   font-family: 'Roboto', sans-serif;
   background-color: #E7E7E7;
+`
+const Bottom = styled.div`
+  background-color: #515A60;
+  color: #E3EFE7;
+  height: 62px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16pt;
 `
 
 ReactDOM.render(
@@ -33,6 +41,9 @@ ReactDOM.render(
     <Main>
       <Headers />
         <Router history={history} />
+        <Bottom>
+          My FrontEnd Test © 2020
+        </Bottom>
     </Main>
   </Provider>,
   document.getElementById('root')
