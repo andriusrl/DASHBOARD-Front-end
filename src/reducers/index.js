@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 import { connectRouter } from "connected-react-router";
-import LoginData from "./loginData";
+import feedData from "./feedData";
 
 export const generateReducers = history =>
   combineReducers({
     router: connectRouter(history),
-    LoginData,
+    feedData,
   });
