@@ -1,18 +1,11 @@
 const initialState = {
-    feedData: {
-        feed: undefined,
-        comments: undefined
-    }
+    feedData: undefined
 }
 
 const FeedData = (state = initialState, action) => {
     switch (action.type) {
         case 'SET_LOGIN_DATA': {
             return {
-                // feedData: {
-                //     feed: action.payload.value[0].data,
-                //     comments: action.payload.value[1].data
-                // }
                 feedData: action.payload.value[0].data.map(
                     feedValue=>{return{
                         id: feedValue.id,
