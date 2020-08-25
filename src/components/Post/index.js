@@ -8,10 +8,11 @@ const PostWrapper = styled.div`
 const Comment = styled.div`
     display: flex;
     align-items: center;
+    margin-top: 24px;
 `
 const Description = styled.div`
     width: 50%;
-    margin: 9px 28px 9px 28px;
+    margin: 18px 28px 9px 28px;
 `
 const ImageBar = styled.div`
     background-color: #707070;
@@ -26,6 +27,15 @@ const ImageComment = styled.img`
     border-radius: 100%;
     object-fit: cover;
     margin: 0 12px 0 12px;
+`
+const TitlePost = styled.div`
+    color: #6A6A6A;
+    font-size: 22pt;
+`
+const ParagraphPost = styled.div`
+    color: #BDBDBD;
+    font-size: 12pt;
+
 `
 
 const showComments = (props)=>{
@@ -44,8 +54,8 @@ function Post(props) {
     return (
         <PostWrapper>
             <Description>
-                <h2>{props.title}</h2>
-                <p>{props.body}</p>
+                <TitlePost>{props.title}</TitlePost>
+                <ParagraphPost>{props.body}</ParagraphPost>
                 <div>
                     {props.comment?showComments(props):false}
                 </div>

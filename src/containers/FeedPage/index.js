@@ -29,7 +29,6 @@ const SubTitleBold = styled.div`
     display: inline;
     color: #7C7C7C;
 `
-
 class LoginPage extends React.Component {
     constructor(props) {
         super(props)
