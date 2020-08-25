@@ -26,6 +26,7 @@ const ButtonMenu = styled.div`
   };
   width: 166px;
   height: 100%;
+  cursor: pointer;
 `
 const TextButtonMenu = styled.p`
   text-align: center;
